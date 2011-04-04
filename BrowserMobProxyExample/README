@@ -1,0 +1,21 @@
+Example using the BrowserMob Proxy to record HTTP traffic and save off a HTTP Archive.
+
+- Build and install BrowserMob Proxy
+
+Download the source code:
+
+> git clone https://github.com/lightbody/browsermob-proxy
+
+Copy the Maven settings to your home directory, you will need to make
+a backup of your old settings.xml.
+
+> cd browsermob-proxy
+> cp $(HOME)/.m2/settings.xml $(HOME)/.m2/settings.xml.bak
+> cp settings.xml $(HOME)/.m2/settings.xml
+
+Build and install
+
+> mvn
+> mvn install
+
+- Open and build the pom.xml file (I used IntelliJ)

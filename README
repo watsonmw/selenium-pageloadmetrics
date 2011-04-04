@@ -1,0 +1,13 @@
+Examples from our Selenium page load metrics talk.
+
+- BrowserMobProxyExample
+
+Example using the BrowserMob Proxy to record HTTP traffic during a Selenium test.
+
+- FiddlerExamples
+
+Examples of using the FiddlerCore proxy to record HTTP traffic during a Selenium test.  Includes other useful ways to use a proxy during testing.
+
+- FireFoxNetExport
+
+Example using the FireFox NetExport plugin to export a HAR file when a page has loaded.
