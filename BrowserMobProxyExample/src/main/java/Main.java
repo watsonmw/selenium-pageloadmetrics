@@ -1,6 +1,8 @@
 import org.browsermob.proxy.ProxyServer;
+import org.openqa.selenium.Proxy;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
 import java.io.File;
 
 public class Main
@@ -9,13 +11,13 @@ public class Main
     {
         ProxyServer proxy = new ProxyServer(9090);
         proxy.start();
-        FirefoxProfile profile = new FirefoxProfile();
-        profile.setPreference("network.proxy.type", 1);
-        profile.setPreference("network.proxy.http", "localhost");
-        profile.setPreference("network.proxy.http_port", 9090);
-        profile.setPreference("network.proxy.ssl", "localhost");
-        profile.setPreference("network.proxy.ssl_port", 9090);
-        FirefoxDriver driver = new FirefoxDriver(profile);
+
+        Proxy mobProxy = new Proxy().setHttpProxy("localhost:9090");
+
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("proxy", mobProxy);
+
+        FirefoxDriver driver = new FirefoxDriver(caps);
         proxy.newHar("Yahoo");
         driver.get("http://yahoo.com");
         proxy.endPage();
@@ -27,4 +29,3 @@ public class Main
         proxy.stop();
     }
 }
-
