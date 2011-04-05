@@ -18,5 +18,10 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
             <artifactId>browsermob-proxy</artifactId>
             <version>2.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-remote-control</artifactId>
+            <version>2.0b3</version>
+        </dependency>
     </dependencies>
 </project>
